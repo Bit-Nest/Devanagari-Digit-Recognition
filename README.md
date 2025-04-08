@@ -26,7 +26,7 @@ A simple and elegant web application built using **Flask** that lets users uploa
 devanagari_flask_app/
 │
 ├── app.py                    # Flask backend
-├── devanagari_digit_model.h5 # Trained CNN model (not included in repo)
+├── devanagari_digit_model.h5 # Trained CNN model (included in repo  😊)
 ├── static/
 │   ├── uploads/              # Stores uploaded images
 │   └── style.css             # Custom styles (optional)
