@@ -1,0 +1,5 @@
+Flask
+tensorflow # or the version of TensorFlow you're using
+numpy
+Pillow
+werkzeug
