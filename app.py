@@ -93,6 +93,25 @@ def predict():
 def send_file(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
+@app.route('/api/predict', methods=['POST'])
+def api_predict():
+    if 'image' not in request.files:
+        return {"error": "No file provided"}, 400
+
+    file = request.files['image']
+    try:
+        pil_image = Image.open(file.stream).convert('RGB')
+        image_np = np.array(pil_image)
+
+        contours, _ = preprocess_and_segment(image_np)
+        prediction = predict_digits_from_contours(image_np, contours)
+
+        return {"prediction": prediction}, 200
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+
 if __name__ == '__main__':
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    app.run(host='0.0.0.0', port=5100)
+    app.run(host='0.0.0.0', port=5200)
