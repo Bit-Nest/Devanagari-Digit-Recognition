@@ -59,7 +59,7 @@ pillow
 
 ```bash
 # Step 1: Clone the repo
-git clone https://github.com/yourusername/devanagari-digit-recognition-flask.git
+git clone https://github.com/Bit-Nest/Devanagari-Digit-Recognition.git
 cd devanagari-digit-recognition-flask
 
 # Step 2: Make sure your model file is present
